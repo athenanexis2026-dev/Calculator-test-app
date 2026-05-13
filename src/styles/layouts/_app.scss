@@ -1,0 +1,13 @@
+.app-shell {
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  padding: var(--space-4);
+  background: var(--color-bg);
+}
+
+@media (min-width: 48rem) {
+  .app-shell {
+    padding: var(--space-8);
+  }
+}

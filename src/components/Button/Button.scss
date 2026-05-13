@@ -1,0 +1,87 @@
+@use "../../styles/abstracts/mixins";
+
+.calculator-button {
+  display: inline-grid;
+  min-width: 0;
+  min-height: clamp(3.25rem, 15vw, 3.75rem);
+  place-items: center;
+  border: 0;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  touch-action: manipulation;
+  user-select: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.calculator-button:hover {
+  transform: translateY(-0.0625rem);
+}
+
+.calculator-button:active {
+  transform: scale(0.98);
+}
+
+.calculator-button:focus-visible {
+  @include mixins.focus-ring;
+}
+
+.calculator-button--number {
+  background: var(--color-surface-raised);
+}
+
+.calculator-button--number:hover {
+  background: #242424;
+}
+
+.calculator-button--number:active {
+  background: #303030;
+}
+
+.calculator-button--operator,
+.calculator-button--equal {
+  color: var(--color-text-on-primary);
+  background: var(--color-primary);
+}
+
+.calculator-button--operator:hover,
+.calculator-button--equal:hover {
+  background: var(--color-primary-hover);
+}
+
+.calculator-button--operator:active,
+.calculator-button--equal:active {
+  background: var(--color-primary-active);
+}
+
+.calculator-button--utility {
+  background: var(--color-border);
+}
+
+.calculator-button--utility:hover {
+  background: #343434;
+}
+
+.calculator-button--utility:active {
+  background: #3d3d3d;
+}
+
+.calculator-button--wide {
+  grid-column: span 2;
+}
+
+@media (min-width: 48rem) {
+  .calculator-button {
+    min-height: 4rem;
+  }
+}

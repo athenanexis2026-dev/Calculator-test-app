@@ -1,0 +1,39 @@
+.calculator-display {
+  display: grid;
+  min-height: clamp(6.25rem, 28vw, 7rem);
+  align-content: end;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-raised);
+  text-align: right;
+}
+
+.calculator-display__expression {
+  min-height: 1.25rem;
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calculator-display__value {
+  overflow: hidden;
+  color: var(--color-text);
+  font-size: clamp(1.875rem, 9vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width: 30rem) {
+  .calculator-display {
+    padding: var(--space-4);
+  }
+}
